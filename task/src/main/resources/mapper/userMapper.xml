@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+        <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.dao.UserDao" >
+    
+
+    <select id="selectAll"  resultType="com.example.demo.entity.User">
+        select id,userId,u_last_name,u_Pref5,result from userobject2
+        limit #{pageindex},#{pagesize}
+    </select>
+    <select id="selectById" resultType="com.example.demo.entity.User">
+        select id,userId,u_last_name,u_Pref5,result from userobject2 
+        where id = #{id}
+    </select>
+    <update id="updateById" >
+        update userobject2 set u_last_name = #{lastName} 
+        where id = #{id}
+    </update>
+    <insert id="insert" parameterType="com.example.demo.entity.User">
+        insert into userobject2(userId,u_last_name,u_Pref5,result) 
+        values 
+        (
+        #{userId},
+        #{u_last_name},
+        #{u_Pref5},
+        #{result}
+        )
+    </insert>
+    
+    
+</mapper>
