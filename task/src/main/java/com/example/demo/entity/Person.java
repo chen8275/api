@@ -11,7 +11,8 @@
   * @auther chendesheng
   * @date 2018/8/7
   */
- public class HelloUser {
+ public class Person {
+     
      private Long id;
      private String name;
      private Integer age;
@@ -39,4 +40,5 @@
      public void setAge(Integer age) {
          this.age = age;
      }
+     
  }
