@@ -19,7 +19,7 @@
  @Controller
  public class HelloController {
      
-     @RequestMapping("/hello")
+   /*  @RequestMapping("/hello")
      public String index(){
          return "Hello world !";
      }
@@ -28,5 +28,5 @@
      public String index(ModelMap map){
          map.addAttribute("host","http://blog.didispace.com");
          return "index";
-     }
+     }*/
  }

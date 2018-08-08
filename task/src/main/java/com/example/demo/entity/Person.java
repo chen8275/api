@@ -7,38 +7,60 @@
   */
  package com.example.demo.entity;
 
+ import javax.persistence.Column;
+ import javax.persistence.Entity;
+ import javax.persistence.GeneratedValue;
+ import javax.persistence.Id;
+
  /**
   * @auther chendesheng
   * @date 2018/8/7
   */
+ @Entity
  public class Person {
-     
-     private Long id;
-     private String name;
-     private Integer age;
+     @Id
+     @GeneratedValue
+     private long id;
+     @Column(nullable = false, unique = true)
+     private String userName;
+     @Column(nullable = false)
+     private String password;
+     @Column(nullable = false)
+     private int age;
     
-     public Long getId() {
+     public long getId() {
          return id;
      }
     
-     public void setId(Long id) {
+     public Person setId(long id) {
          this.id = id;
+         return this;
      }
     
-     public String getName() {
-         return name;
+     public String getUserName() {
+         return userName;
      }
     
-     public void setName(String name) {
-         this.name = name;
+     public Person setUserName(String userName) {
+         this.userName = userName;
+         return this;
      }
     
-     public Integer getAge() {
+     public String getPassword() {
+         return password;
+     }
+    
+     public Person setPassword(String password) {
+         this.password = password;
+         return this;
+     }
+    
+     public int getAge() {
          return age;
      }
     
-     public void setAge(Integer age) {
+     public Person setAge(int age) {
          this.age = age;
+         return this;
      }
-     
  }
