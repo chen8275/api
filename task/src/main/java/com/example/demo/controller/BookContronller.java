@@ -23,8 +23,10 @@
   */
  @RestController
  public class BookContronller {
+     
      @Autowired
      BookDao bookDao;
+     
      @RequestMapping("/getBookList")
      public PageInfo listBookByPage(Integer pageNum,Integer pageSize){
          PageHelper.startPage(pageNum,pageSize);
