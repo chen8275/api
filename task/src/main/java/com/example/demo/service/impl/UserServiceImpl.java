@@ -8,6 +8,7 @@
  package com.example.demo.service.impl;
 
  import com.example.demo.dao.UserDao;
+ import com.example.demo.entity.EarlyUser;
  import com.example.demo.entity.User;
  import com.example.demo.service.UserService;
  import org.springframework.beans.factory.annotation.Autowired;
@@ -50,6 +51,11 @@
      @Override
      public void deleteById(Integer id) { 
          userDao.deleteById(id);
+     }
+    
+     @Override
+     public List<EarlyUser> selectEarlyUser() {
+         return userDao.selectEarlyUser();
      }
     
  }

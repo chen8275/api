@@ -10,9 +10,11 @@
  import com.alibaba.fastjson.JSON;
  import com.alibaba.fastjson.JSONArray;
  import com.alibaba.fastjson.JSONObject;
+ import com.example.demo.entity.EarlyUser;
  import com.example.demo.entity.User;
  import com.example.demo.service.UserService;
  import org.springframework.beans.factory.annotation.Autowired;
+ import org.springframework.web.bind.annotation.GetMapping;
  import org.springframework.web.bind.annotation.PostMapping;
  import org.springframework.web.bind.annotation.RequestMapping;
  import org.springframework.web.bind.annotation.RestController;
@@ -134,6 +136,23 @@
              e.printStackTrace();
          }
          return jsonObject; 
+    }
+    
+    @RequestMapping("/earlyUser")
+    public JSONObject selectEarlyUser(){
+         JSONObject jsonObject = new JSONObject();
+         
+         try {
+             List<EarlyUser> list = userService.selectEarlyUser();
+             JSONArray jsonArray = (JSONArray)JSONArray.toJSON(list);
+             jsonObject.put("msgcode:",200);
+             jsonObject.put("rows:",jsonArray);
+             
+         }catch (Exception e){
+             jsonObject.put("msgcode:","500");
+             e.printStackTrace();
+         }
+         return jsonObject;
     }
     
  }

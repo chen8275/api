@@ -7,6 +7,7 @@
   */
  package com.example.demo.dao;
 
+ import com.example.demo.entity.EarlyUser;
  import com.example.demo.entity.User;
  import org.apache.ibatis.annotations.Mapper;
  import org.apache.ibatis.annotations.Param;
@@ -30,4 +31,6 @@
      int insert(User user);
      
      void deleteById(Integer id);
+     
+     List<EarlyUser> selectEarlyUser();
  }

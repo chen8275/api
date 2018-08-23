@@ -3,6 +3,7 @@ package com.example.demo.dao;
 import com.example.demo.entity.Department;
 
 public interface DepartmentMapper {
+    
     int deleteByPrimaryKey(Integer id);
 
     int insert(Department record);
@@ -14,4 +15,5 @@ public interface DepartmentMapper {
     int updateByPrimaryKeySelective(Department record);
 
     int updateByPrimaryKey(Department record);
+    
 }

@@ -30,4 +30,10 @@
         where id = #{id,jdbcType=INTEGER}
     </delete>
     
+    <select id="selectEarlyUser" resultType="com.example.demo.entity.EarlyUser">
+        SELECT t1.id,t1.userId,t2.`name`,t2.`password` 
+        from userobject2 t1,user_department t2 
+        WHERE t1.userId = t2.userId;
+    </select>
+    
 </mapper>

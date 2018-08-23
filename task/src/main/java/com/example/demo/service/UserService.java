@@ -7,6 +7,7 @@
   */
  package com.example.demo.service;
 
+ import com.example.demo.entity.EarlyUser;
  import com.example.demo.entity.User;
  import org.mybatis.spring.annotation.MapperScan;
  import org.springframework.beans.factory.annotation.Autowired;
@@ -31,4 +32,6 @@
      int insertUser(User user);
      
      void deleteById(Integer id);
+    
+     List<EarlyUser> selectEarlyUser();
  }
