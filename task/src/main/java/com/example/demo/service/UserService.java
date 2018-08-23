@@ -29,4 +29,6 @@
      void changeById(String lastName,int id);
      
      int insertUser(User user);
+     
+     void deleteById(Integer id);
  }

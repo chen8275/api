@@ -47,4 +47,9 @@
          
      }
     
+     @Override
+     public void deleteById(Integer id) { 
+         userDao.deleteById(id);
+     }
+    
  }

@@ -29,5 +29,5 @@
      
      int insert(User user);
      
-     
+     void deleteById(Integer id);
  }

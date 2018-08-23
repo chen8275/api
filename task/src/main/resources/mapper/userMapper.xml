@@ -25,6 +25,9 @@
         #{result}
         )
     </insert>
-    
+    <delete id="deleteById" parameterType="java.lang.Integer">
+        delete from userobject2
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
     
 </mapper>

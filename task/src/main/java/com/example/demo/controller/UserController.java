@@ -102,7 +102,6 @@
          String honeyName = request.getParameter("honeyName");
          String result = request.getParameter("result");
          
-         
          JSONObject jsonObject = new JSONObject();
          User user = new User();
         
@@ -110,7 +109,6 @@
          user.setU_Pref5(honeyName);
          user.setUserId(userId);
          user.setResult(result);
-         
          try {
              userService.insertUser(user);
              jsonObject.put("msg","插入成功");
@@ -119,6 +117,23 @@
              e.printStackTrace();
          }
          return jsonObject;
+    }
+    
+    @RequestMapping(value = "/deleteById")
+     public JSONObject delete(HttpServletRequest request,HttpServletResponse response){
+         String id = request.getParameter("id");
+         JSONObject jsonObject = new JSONObject();
+         try {
+             int id1 = Integer.valueOf(id);
+             userService.deleteById(id1);
+             jsonObject.put("msgcode",200);
+             jsonObject.put("msg","删除成功");
+             
+         }catch (Exception e){
+             jsonObject.put("msg","删除失败");
+             e.printStackTrace();
+         }
+         return jsonObject; 
     }
     
  }
