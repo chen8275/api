@@ -29,4 +29,10 @@
      public List<Fish> listAllFish(int pageNum, int pageSize) {
          return fishMapper.listFish(pageNum,pageSize);
      }
+    
+     @Override
+     public int insertFish(Fish fish) {
+         
+         return fishMapper.insert(fish);
+     }
  }

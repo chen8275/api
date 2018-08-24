@@ -50,4 +50,33 @@
          }
          return jsonObject;
      }
+     
+     @RequestMapping("/insert")
+     public JSONObject insertFish(HttpServletRequest request,HttpServletResponse response){
+         int id = Integer.valueOf(request.getParameter("id"));
+         String name = request.getParameter("name");
+         String publishName = request.getParameter("publishName");
+         float price = Integer.valueOf(request.getParameter("price"));
+         JSONObject jsonObject = new JSONObject();
+         
+         Fish fish = new Fish();
+         fish.setId(id);
+         fish.setName(name);
+         fish.setPublishname(publishName);
+         fish.setPrice(price);
+         int fishNumber = 0;
+         try {
+             fishNumber = fishService.insertFish(fish);
+         }catch (Exception e) {
+             e.printStackTrace();
+         }
+         if(fishNumber == -1){
+             jsonObject.put("msgcode:","插入失败");
+             jsonObject.put("fishNumber:",fishNumber+"");
+         }else{
+             jsonObject.put("msgcode:","插入成功");
+             jsonObject.put("fishNumber:",fishNumber+"");
+         }
+         return jsonObject;
+     }
  }
