@@ -22,4 +22,5 @@ public interface FishMapper {
     
     List<Fish> listFish(@Param("pageNum") int pageNum,@Param("pageSize") int pageSize);
     
+    int countFish();
 }

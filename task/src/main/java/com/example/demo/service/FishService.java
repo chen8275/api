@@ -21,4 +21,6 @@
      List<Fish> listAllFish(int pageNum,int pageSize);
      
      int insertFish(Fish fish);
+     
+     int count();
  }

@@ -38,6 +38,12 @@
         <dubbo-spring-boot>1.0.0</dubbo-spring-boot>
     </properties>
     <dependencies>
+        <!--admin-auth-->
+        <!--<dependency>
+            <groupId>com.tuhu.finance</groupId>
+            <artifactId>tuhu-boot-stater-admin-auth</artifactId>
+            <version>1.2.2018042401</version>
+        </dependency>-->
         <!--druid-->
         <dependency>
             <groupId>com.alibaba</groupId>
@@ -94,6 +100,7 @@
             <artifactId>android-json</artifactId>
             <version>0.0.20131108.vaadin1</version>
         </dependency>
+        <!--thymeleaf-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>

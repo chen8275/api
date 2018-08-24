@@ -46,12 +46,6 @@
          try{
             
              List<User> list= userService.selectAll((pageNumber1-1)*pageSize1,pageSize1);
-             
-            /* for (User user:list){ 
-//                 stringBuffer.append(user.toString());
-                 stringBuffer.append(user.toString());
-                 
-             }*/
              JSONArray jsonarray=(JSONArray) JSONArray.toJSON(list);
              jsonObject.put("rows",jsonarray);
              

@@ -88,6 +88,9 @@
         from fish
         limit #{pageNum},#{pageSize}
     </select>
+    <select id="countFish" resultType="java.lang.Integer">
+        select count(*) from fish;
+    </select>
 
     
 </mapper> 

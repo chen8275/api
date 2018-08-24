@@ -35,4 +35,9 @@
          
          return fishMapper.insert(fish);
      }
+    
+     @Override
+     public int count() {
+         return fishMapper.countFish();
+     }
  }

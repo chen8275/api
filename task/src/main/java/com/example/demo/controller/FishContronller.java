@@ -79,4 +79,18 @@
          }
          return jsonObject;
      }
+     
+     @RequestMapping("/count")
+     public JSONObject countFish(){
+         JSONObject jsonObject = new JSONObject();
+         try {
+             int count = fishService.count();
+             jsonObject.put("count:",count);
+             jsonObject.put("msgcode:",200);
+         }catch (Exception e){
+             e.printStackTrace();
+             jsonObject.put("msgcode:",500);
+         }
+         return jsonObject;
+     }
  }
