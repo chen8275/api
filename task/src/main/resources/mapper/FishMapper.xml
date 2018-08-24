@@ -82,6 +82,12 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
     
+    <select id="listFish" resultType="com.example.demo.entity.Fish">
+        select
+        <include refid="Base_Column_List" />
+        from fish
+        limit #{pageNum},#{pageSize}
+    </select>
 
     
 </mapper> 
