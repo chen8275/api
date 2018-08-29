@@ -40,4 +40,14 @@
      public int count() {
          return fishMapper.countFish();
      }
+    
+     @Override
+     public int updateFishById(String name, Integer id) {
+         return fishMapper.updateStatement(name,id);
+     }
+    
+     @Override
+     public List<Fish> select(String name, String publishName, int pageIndex, int pageSize) {
+         return fishMapper.selectFish(name,publishName,pageIndex,pageSize);
+     }
  }

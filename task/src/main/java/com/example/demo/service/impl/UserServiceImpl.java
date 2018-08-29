@@ -58,4 +58,9 @@
          return userDao.selectEarlyUser();
      }
     
+     @Override
+     public List<User> likeUserId(String userId) {
+         return userDao.selectUserLikeUserId(userId);
+     }
+    
  }

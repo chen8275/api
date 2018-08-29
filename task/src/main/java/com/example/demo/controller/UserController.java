@@ -149,4 +149,22 @@
          return jsonObject;
     }
     
+    @RequestMapping("/likeUserId")
+     public JSONObject like(HttpServletRequest request,HttpServletResponse response){
+         
+         String userId = request.getParameter("userId");
+        JSONObject jsonObject = new JSONObject();
+        
+         try {
+             List<User> list = userService.likeUserId(userId);
+             JSONArray jsonArray = (JSONArray) JSONArray.toJSON(list);
+             jsonObject.put("msgcode:",200);
+             jsonObject.put("rows:",jsonArray);
+             
+         }catch (Exception e){
+             jsonObject.put("msgcode:",500);
+             e.printStackTrace();
+         }
+         return jsonObject;
+    }
  }

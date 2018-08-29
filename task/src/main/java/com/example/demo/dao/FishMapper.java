@@ -20,7 +20,11 @@ public interface FishMapper {
 
     int updateByPrimaryKey(Fish record);
     
+    List<Fish> selectFish(@Param("name") String name,@Param("publishName") String publishName,@Param("pageIndex") int pageIndex,@Param("pageSize") int pageSize); 
+        
     List<Fish> listFish(@Param("pageNum") int pageNum,@Param("pageSize") int pageSize);
     
     int countFish();
+    
+    int updateStatement(@Param("name") String name,@Param("id") Integer id);
 }

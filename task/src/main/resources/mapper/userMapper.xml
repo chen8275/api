@@ -35,5 +35,9 @@
         from userobject2 t1,user_department t2 
         WHERE t1.userId = t2.userId;
     </select>
-    
+    <select id="selectUserLikeUserId" resultType="com.example.demo.entity.User">
+        select *
+        from userobject2
+        where userId like CONCAT(CONCAT('%',#{userId}),'%');
+    </select>
 </mapper>

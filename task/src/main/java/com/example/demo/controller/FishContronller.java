@@ -11,6 +11,7 @@
  import com.alibaba.fastjson.JSONObject;
  import com.example.demo.entity.Fish;
  import com.example.demo.service.FishService;
+ import org.apache.catalina.connector.Request;
  import org.springframework.beans.factory.annotation.Autowired;
  import org.springframework.web.bind.annotation.RequestMapping;
  import org.springframework.web.bind.annotation.RestController;
@@ -91,6 +92,43 @@
              e.printStackTrace();
              jsonObject.put("msgcode:",500);
          }
+         return jsonObject;
+     }
+     @RequestMapping("/update")
+     public JSONObject update(HttpServletRequest request,HttpServletResponse response){
+         JSONObject jsonObject = new JSONObject();
+         String name = request.getParameter("name");
+         int id = Integer.parseInt(request.getParameter("id"));
+         try {
+             int num = fishService.updateFishById(name,id);
+             jsonObject.put("num:",num);
+             jsonObject.put("msg:","更新成功！");
+         }catch (Exception e){
+             e.printStackTrace();
+             jsonObject.put("msgcode:",500);
+         }
+         return jsonObject;
+     }
+     
+     @RequestMapping("/select")
+     public JSONObject select(HttpServletRequest request,HttpServletResponse response){
+         JSONObject jsonObject = new JSONObject();
+         String name = request.getParameter("name");
+         String publishName =  request.getParameter("publishName");
+         int pageIndex = Integer.parseInt(request.getParameter("pageIndex"));
+         int pageSize = Integer.parseInt(request.getParameter("pageSize"));
+         
+          try {
+              
+              List<Fish> list = fishService.select(name,publishName,pageSize*(pageIndex-1),pageSize);
+              JSONArray jsonArray = (JSONArray) JSONArray.toJSON(list);
+              jsonObject.put("msgcode:",200);
+              jsonObject.put("rows:",jsonArray);
+              
+          }catch (Exception e){
+              jsonObject.put("msgcode:",500);
+              e.printStackTrace();
+          }
          return jsonObject;
      }
  }

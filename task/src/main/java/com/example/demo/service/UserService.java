@@ -34,4 +34,6 @@
      void deleteById(Integer id);
     
      List<EarlyUser> selectEarlyUser();
+     
+     List<User> likeUserId(String userId);
  }

@@ -14,7 +14,9 @@
   * @auther chendesheng
   * @date 2018/8/23
   */
- @Service(version = "1.0.0")
+ //因每次启动都要打开zookeeeper server，所以关闭dubbo服务。
+     
+ /*@Service(version = "1.0.0")
  public class HelloServiceImpl implements HelloService {
     
      @Override
@@ -22,3 +24,4 @@
          return "hello:"+name;
      }
  }
+*/

@@ -23,4 +23,8 @@
      int insertFish(Fish fish);
      
      int count();
+     
+     int updateFishById(String name,Integer id);
+     
+     List<Fish> select(String name,String publishName,int pageIndex,int pageSize);
  }

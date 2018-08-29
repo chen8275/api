@@ -28,6 +28,7 @@
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{publishname,jdbcType=VARCHAR}, 
       #{price,jdbcType=REAL})
   </insert>
+    
   <insert id="insertSelective" parameterType="com.example.demo.entity.Fish">
     insert into fish
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -91,6 +92,28 @@
     <select id="countFish" resultType="java.lang.Integer">
         select count(*) from fish;
     </select>
-
+    <update id="updateStatement" parameterType="com.example.demo.entity.Fish">
+        <![CDATA[
+        update fish set name=#{name} where id=#{id};
+        ]]>
+    </update>
+    
+    <select id="selectFish" resultType="com.example.demo.entity.Fish">
+        select 
+        <include refid="Base_Column_List"/>
+        from fish
+        <where>
+            1=1
+            <if test="name != null ">
+                and name = #{name}
+            </if>
+            <if test="publishName != null ">
+                and publishName = #{publishName}  
+            </if>
+        </where>
+        limit #{pageIndex},#{pageSize}
+    </select>
+    
+    
     
 </mapper> 
