@@ -14,9 +14,11 @@
  import org.springframework.beans.factory.annotation.Autowired;
  import org.springframework.web.bind.annotation.RequestMapping;
  import org.springframework.web.bind.annotation.RestController;
+ import org.w3c.dom.ls.LSException;
 
  import javax.servlet.http.HttpServletRequest;
  import javax.servlet.http.HttpServletResponse;
+ import java.util.ArrayList;
  import java.util.List;
 
  /**
@@ -40,6 +42,26 @@
              jsonObject.put("msgcode:",200);
              jsonObject.put("rows:",jsonArray);
              
+         }catch (Exception e){
+             jsonObject.put("msgcode:",500);
+             e.printStackTrace();
+         }
+         return jsonObject;
+     }
+     
+     @RequestMapping("/foreach")
+     public JSONObject foreachItem(HttpServletRequest request, HttpServletResponse response){
+         JSONObject jsonObject = new JSONObject();
+         List<Integer> list = new ArrayList<>();
+         list.add(1);
+         list.add(2);
+         list.add(3);
+         try {
+          List<Department> departmentList = departmentService.dynamicForeach(list);
+          JSONArray jsonArray = (JSONArray) JSONArray.toJSON(departmentList);
+          jsonObject.put("msgcode:",200);
+          jsonObject.put("rows:",jsonArray);
+          
          }catch (Exception e){
              jsonObject.put("msgcode:",500);
              e.printStackTrace();

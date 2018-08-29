@@ -22,4 +22,5 @@ public interface DepartmentMapper {
     
     List<Department> listDepartment(@Param("name")String name,@Param("password")String password);
     
+    List<Department> dynamicForeachTest(List<Integer> ids);
 }

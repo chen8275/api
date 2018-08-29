@@ -27,4 +27,9 @@
      public List<Department> listAllDepartmentByNameOrPassword(String name, String password) {
          return departmentMapper.listDepartment(name,password);
      }
+    
+     @Override
+     public List<Department> dynamicForeach(List<Integer> ids) {
+         return departmentMapper.dynamicForeachTest(ids);
+     }
  }

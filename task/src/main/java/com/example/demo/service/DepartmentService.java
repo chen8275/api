@@ -18,4 +18,6 @@
  public interface DepartmentService {
      
      List<Department> listAllDepartmentByNameOrPassword(String name,String password);
+    
+     List<Department> dynamicForeach(List<Integer> ids);
  }

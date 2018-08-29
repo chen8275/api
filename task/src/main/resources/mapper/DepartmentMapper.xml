@@ -94,4 +94,13 @@
             </if>
         </trim>
     </select>
+
+    <select id="dynamicForeachTest" resultType="com.example.demo.entity.Department">
+        select 
+        <include refid="Base_Column_List"/>
+        from user_department where id in
+        <foreach collection="list" index="index" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </select>
 </mapper>
