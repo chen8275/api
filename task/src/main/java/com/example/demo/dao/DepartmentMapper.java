@@ -1,7 +1,11 @@
 package com.example.demo.dao;
 
 import com.example.demo.entity.Department;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+@Mapper
 public interface DepartmentMapper {
     
     int deleteByPrimaryKey(Integer id);
@@ -15,5 +19,7 @@ public interface DepartmentMapper {
     int updateByPrimaryKeySelective(Department record);
 
     int updateByPrimaryKey(Department record);
+    
+    List<Department> listDepartment(@Param("name")String name,@Param("password")String password);
     
 }

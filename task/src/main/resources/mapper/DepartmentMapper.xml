@@ -81,4 +81,17 @@
       password = #{password,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+    <select id="listDepartment" resultType="com.example.demo.entity.Department">
+        select 
+        <include refid="Base_Column_List"/>
+        from user_department
+        <trim prefix="where" prefixOverrides="and |or">
+            <if test="name != null">
+                name = #{name}
+            </if>
+            <if test="password != null">
+                and password = #{password}
+            </if>
+        </trim>
+    </select>
 </mapper>
