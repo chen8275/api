@@ -14,6 +14,7 @@
  import org.springframework.stereotype.Service;
 
  import java.util.List;
+ import java.util.Map;
 
  /**
   * @auther chendesheng
@@ -32,4 +33,6 @@
      public List<Department> dynamicForeach(List<Integer> ids) {
          return departmentMapper.dynamicForeachTest(ids);
      }
+    
+     
  }

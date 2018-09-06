@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf</title>
+</head>
+<body>
+<span th:text="${name}"></span>
+<h4 th:text= "${data}"></h4>
+<h4 th:utext= "${data}"></h4>
+<!--<span th:if="${age>16}">
+    成年
+</span>
+<span th:unless="${age>16}">
+    未成年
+</span>
+<div th:switch="${age}">
+    <span th:case="18">18岁</span>
+    <span th:case="19">18岁</span>
+    <span th:case="*">qita</span>
+</div>-->
+</body>
+</html>

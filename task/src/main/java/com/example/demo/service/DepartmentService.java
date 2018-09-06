@@ -10,6 +10,7 @@
  import com.example.demo.entity.Department;
 
  import java.util.List;
+ import java.util.Map;
 
  /**
   * @auther chendesheng
@@ -20,4 +21,6 @@
      List<Department> listAllDepartmentByNameOrPassword(String name,String password);
     
      List<Department> dynamicForeach(List<Integer> ids);
+    
+     
  }

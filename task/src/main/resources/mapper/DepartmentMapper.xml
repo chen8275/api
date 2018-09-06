@@ -103,4 +103,14 @@
             #{item}
         </foreach>
     </select>
+
+    <select id="dynamicForeachTest3" resultType="com.example.demo.entity.Department">
+        select
+        <include refid="Base_Column_List"/>
+        from user_department where name like "%"#{name}"%" and id in
+        <foreach collection="ids" index="index" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </select>
+    
 </mapper>

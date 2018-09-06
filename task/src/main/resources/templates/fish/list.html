@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>鱼的列表</title>
+</head>
+<body>
+
+<tr th:each="fish:${fishs}">
+    <td th:text="${fish.id}">14</td>
+    <td th:text="${fish.name}">chen</td>
+    <td th:text="${fish.publishname}">wang</td>
+    <td th:text="${fish.price}">10</td>
+</tr>
+</body>
+</html>
