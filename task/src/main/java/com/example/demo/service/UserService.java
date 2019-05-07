@@ -9,11 +9,6 @@
 
  import com.example.demo.entity.EarlyUser;
  import com.example.demo.entity.User;
- import org.mybatis.spring.annotation.MapperScan;
- import org.springframework.beans.factory.annotation.Autowired;
- import org.springframework.context.annotation.Bean;
- import org.springframework.stereotype.Component;
- import org.springframework.stereotype.Service;
 
  import java.util.List;
 

@@ -8,18 +8,17 @@
  package com.example.demo.dao;
 
  import com.example.demo.entity.EarlyUser;
- import com.example.demo.entity.User;
- import org.apache.ibatis.annotations.Mapper;
- import org.apache.ibatis.annotations.Param;
- import org.springframework.stereotype.Repository;
+import com.example.demo.entity.User;
+import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
- import java.util.List;
+import java.util.List;
 
  /**
   * @auther chendesheng
   * @date 2018/8/2
   */
- @Mapper
+
  @Repository
  public interface UserDao {
      List<User> selectAll(@Param("pageindex") int pageindex, @Param("pagesize") int pagesize);

@@ -5,20 +5,20 @@
   * use it only in accordance with the terms of the license agreement you entered
   * into with Tuhu.cn
   */
- package com.example.demo.dao;
+ package com.example.demo.service;
 
- import com.example.demo.entity.Book;
- import org.apache.ibatis.annotations.Mapper;
- import org.apache.ibatis.annotations.Select;
+ import com.example.demo.entity.Shop;
 
  import java.util.List;
 
  /**
   * @auther chendesheng
-  * @date 2018/8/9
+  * @date 2018/10/31
   */
- @Mapper
- public interface BookDao {
-     @Select("SELECT * FROM BOOK")
-     List<Book> getBookList();
+ public interface ShopService {
+     
+     int insertShop(Shop shop);
+     List<Shop> listAllShop(int pageNum,int pageSize);
+     int updateShopById(String name,int id);
+     int deleteShopById(int id);
  }

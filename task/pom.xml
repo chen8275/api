@@ -38,18 +38,28 @@
         <dubbo-spring-boot>1.0.0</dubbo-spring-boot>
     </properties>
     <dependencies>
-        <!--admin-auth-->
-        <!--<dependency>
-            <groupId>com.tuhu.finance</groupId>
-            <artifactId>tuhu-boot-stater-admin-auth</artifactId>
-            <version>1.2.2018042401</version>
-        </dependency>-->
+      
         <!--druid-->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
             <version>1.1.9</version>
         </dependency>
+    
+       
+        <!--通用mapper-->
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper-spring-boot-starter</artifactId>
+            <version>2.0.1</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>javax.persistence</groupId>
+                    <artifactId>persistence-api</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>

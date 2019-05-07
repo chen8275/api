@@ -7,8 +7,6 @@
   */
  package com.example.demo.entity;
 
- import com.fasterxml.jackson.annotation.JsonTypeInfo;
-
  /**
   * @auther chendesheng
   * @date 2018/8/2

@@ -1,13 +1,11 @@
 package com.example.demo.dao;
 
 import com.example.demo.entity.Department;
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
-import java.util.Map;
 
-@Mapper
+
 public interface DepartmentMapper {
     
     int deleteByPrimaryKey(Integer id);

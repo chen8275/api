@@ -2,12 +2,11 @@ package com.example.demo.dao;
 
 import com.example.demo.entity.Fish;
 import com.github.pagehelper.Page;
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
-@Mapper
+
 public interface FishMapper {
     
     int deleteByPrimaryKey(Integer id);

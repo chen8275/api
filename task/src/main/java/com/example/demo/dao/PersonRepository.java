@@ -14,6 +14,7 @@
   * @auther chendesheng
   * @date 2018/8/8
   */
+ 
  public interface PersonRepository extends JpaRepository<Person,Long> {
      Person findById(long id);
     
