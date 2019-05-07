@@ -10,6 +10,7 @@
  import com.example.demo.dao.FishMapper;
  import com.example.demo.entity.Fish;
  import com.example.demo.service.FishService;
+ import com.github.pagehelper.Page;
  import org.springframework.beans.factory.annotation.Autowired;
  import org.springframework.stereotype.Service;
 
@@ -28,6 +29,11 @@
      @Override
      public List<Fish> listAllFish(int pageNum, int pageSize) {
          return fishMapper.listFish(pageNum,pageSize);
+     }
+    
+     @Override
+     public Page<Fish> list() {
+         return fishMapper.list();
      }
     
      @Override

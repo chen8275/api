@@ -58,11 +58,7 @@
 
         <!-- 配置表的映射 -->
         
-        <table schema="test" tableName="fish" domainObjectName="Fish"
-               enableCountByExample="false"
-               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false"/>
-        <table schema="test" tableName="user_department" domainObjectName="Department"
+        <table schema="test" tableName="shop" domainObjectName="Shop"
                enableCountByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"/>

@@ -8,7 +8,7 @@
  package com.example.demo.service;
 
  import com.example.demo.entity.Fish;
- import org.apache.ibatis.annotations.Param;
+ import com.github.pagehelper.Page;
 
  import java.util.List;
 
@@ -20,6 +20,8 @@
      
      List<Fish> listAllFish(int pageNum,int pageSize);
      
+     Page<Fish> list();
+     
      int insertFish(Fish fish);
      
      int count();
@@ -27,4 +29,6 @@
      int updateFishById(String name,Integer id);
      
      List<Fish> select(String name,String publishName,int pageIndex,int pageSize);
+     
+     
  }

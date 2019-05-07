@@ -9,6 +9,8 @@
 
  import org.springframework.context.annotation.Bean;
  import org.springframework.context.annotation.Configuration;
+ import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
+ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
  import springfox.documentation.builders.ApiInfoBuilder;
  import springfox.documentation.builders.PathSelectors;
  import springfox.documentation.builders.RequestHandlerSelectors;
@@ -23,14 +25,14 @@
   */
  @Configuration
  @EnableSwagger2
- public class Swagger2 {
+ public class Swagger2{ 
      
      @Bean
      public Docket createRestApi() {
          return new Docket(DocumentationType.SWAGGER_2)
                  .apiInfo(apiInfo())
                  .select()
-                 .apis(RequestHandlerSelectors.basePackage("com.example.demo"))
+                 .apis(RequestHandlerSelectors.basePackage("com.example.demo.controller"))
                  .paths(PathSelectors.any())
                  .build();
      }

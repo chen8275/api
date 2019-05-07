@@ -12,6 +12,7 @@
  import com.github.pagehelper.PageHelper;
  import com.github.pagehelper.PageInfo;
  import org.springframework.beans.factory.annotation.Autowired;
+ import org.springframework.web.bind.annotation.GetMapping;
  import org.springframework.web.bind.annotation.RequestMapping;
  import org.springframework.web.bind.annotation.RestController;
 
@@ -26,6 +27,11 @@
      
      @Autowired
      BookDao bookDao;
+     
+     @GetMapping("/hello")
+     public String hello(){
+         return "Hello World";
+     }
      
      @RequestMapping("/getBookList")
      public PageInfo listBookByPage(Integer pageNum,Integer pageSize){

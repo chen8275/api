@@ -7,14 +7,18 @@
   */
  package com.example.demo.entity;
 
+ import lombok.Data;
+
  /**
   * @auther chendesheng
   * @date 2018/8/9
   */
+ @Data
  public class Book {
      
      private int id;
      private String name;
+     private boolean bookSale;
     
      public int getId() {
          return id;
@@ -30,5 +34,13 @@
     
      public void setName(String name) {
          this.name = name;
+     }
+    
+     public boolean isBookSale() {
+         return bookSale;
+     }
+    
+     public void setBookSale(boolean bookSale) {
+         this.bookSale = bookSale;
      }
  }

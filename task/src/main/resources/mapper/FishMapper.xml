@@ -22,6 +22,7 @@
     delete from fish
     where id = #{id,jdbcType=INTEGER}
   </delete>
+    
   <insert id="insert" parameterType="com.example.demo.entity.Fish">
     insert into fish (id, name, publishName, 
       price)
@@ -60,6 +61,7 @@
       </if>
     </trim>
   </insert>
+    
   <update id="updateByPrimaryKeySelective" parameterType="com.example.demo.entity.Fish">
     update fish
     <set>
@@ -89,6 +91,8 @@
         from fish
         limit #{pageNum},#{pageSize}
     </select>
+    
+    
     <select id="countFish" resultType="java.lang.Integer">
         select count(*) from fish;
     </select>
@@ -113,7 +117,9 @@
         </where>
         limit #{pageIndex},#{pageSize}
     </select>
-    
-    
-    
+    <select id="list" resultType="com.example.demo.entity.Fish">
+        select
+        <include refid="Base_Column_List" />
+        from fish
+    </select>
 </mapper> 
